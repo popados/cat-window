@@ -4,6 +4,7 @@
 import { createNavigation } from "./components/navigation.js";
 import { createContactView } from "./components/contactView.js";
 import { createAboutView } from "./components/aboutView.js";
+import { createHomeView } from "./components/homeView.js";
 
 const app = document.getElementById("app");
 
@@ -29,8 +30,7 @@ function renderApp(data = {}) {
             app.appendChild(aboutView);
             break;
         default:
-            const homeView = document.createElement("div");
-            homeView.textContent = "Welcome to the Home Page!";
+            const homeView = createHomeView();
             app.appendChild(homeView);
     }
 

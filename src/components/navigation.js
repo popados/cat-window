@@ -5,7 +5,7 @@ export function createNavigation(onNavigate, activePage = "home") {
     nav.className = "app-navigation";
 
     const pages = [
-        { id: "home", label: "Home" },
+        { id: "home", label: "Landing" },
         { id: "about", label: "About" },
         { id: "contact", label: "Contact" },
     ];
