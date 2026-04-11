@@ -14,6 +14,17 @@
 
 ## Specifications 
 
+### Tooling
+
+This project now uses Vite for local development and production builds.
+
+### Commands
+
+- `npm install`
+- `npm run dev`
+- `npm run build`
+- `npm run preview`
+
 ***
 
 ### DayNum | x/x/20xx - Today
