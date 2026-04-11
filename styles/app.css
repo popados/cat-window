@@ -1,0 +1,52 @@
+
+
+.app-container {
+    max-width: 960px;
+    margin: 1.5rem auto;
+    padding: 1rem;
+}
+
+.app-navigation {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    width: 100%;
+    max-width: 100%;
+    margin-bottom: 20px;
+}
+
+.app-navigation-row {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    flex-wrap: wrap;
+    width: 100%;
+}
+
+.app-navigation button {
+    padding: 8px 16px;
+    background: var(--nav-bg-color);
+    border: 1px solid var(--link-color);
+    color: var(--main-color);
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.app-navigation button:hover {
+    background: var(--secondary-color);
+    color: var(--last-color);
+}
+
+.app-navigation button.is-active,
+.app-navigation button[aria-current="page"] {
+    background: var(--link-color);
+    color: var(--nav-bg-color);
+    border-color: var(--main-color);
+    font-weight: 700;
+    box-shadow: 0 0 0 2px rgba(240, 183, 41, 0.25);
+}
+
+
+
