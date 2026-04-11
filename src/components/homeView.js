@@ -11,14 +11,8 @@ export function createHomeView() {
     const subtitle = document.createElement("p");
     subtitle.textContent = "A panel landing page for every section in the original cat-gallery site.";
 
-    const openSiteLink = document.createElement("a");
-    openSiteLink.href = "./cat-gallery/index.html";
-    openSiteLink.textContent = "Open Original Site";
-    openSiteLink.className = "landing-cta";
-
     hero.appendChild(title);
     hero.appendChild(subtitle);
-    hero.appendChild(openSiteLink);
     container.appendChild(hero);
 
     const sectionGrid = document.createElement("div");
@@ -26,42 +20,42 @@ export function createHomeView() {
 
     const sections = [
         {
-            id: "hero",
+            page: "home.html",
             name: "Home",
             summary: "Hero banner with intro, profile image, and site welcome."
         },
         {
-            id: "about",
+            page: "about.html",
             name: "About",
             summary: "Background and personality notes about Barnacle and Bean."
         },
         {
-            id: "gallery",
+            page: "gallery.html",
             name: "Gallery",
             summary: "Photo grid with lightbox support for cat pictures."
         },
         {
-            id: "blog",
+            page: "blog.html",
             name: "Blog",
             summary: "Latest post list with single-post reading view."
         },
         {
-            id: "articles",
+            page: "articles.html",
             name: "Articles",
             summary: "Curated external cat-care reads with personal reactions."
         },
         {
-            id: "facts",
+            page: "facts.html",
             name: "Facts",
             summary: "Short, fun cat facts section for quick reading."
         },
         {
-            id: "affiliate",
+            page: "shop.html",
             name: "Shop",
             summary: "Favorite picks and affiliate-style cat product links."
         },
         {
-            id: "events",
+            page: "events.html",
             name: "Events",
             summary: "Upcoming cat events and date highlights."
         }
@@ -82,7 +76,7 @@ export function createHomeView() {
         text.textContent = section.summary;
 
         const jumpLink = document.createElement("a");
-        jumpLink.href = `./cat-gallery/index.html#${section.id}`;
+        jumpLink.href = `./sections/${section.page}`;
         jumpLink.textContent = "Go to section";
 
         panel.appendChild(badge);
