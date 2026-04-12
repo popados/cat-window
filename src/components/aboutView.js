@@ -10,7 +10,7 @@ export function createAboutView() {
     const paragraphs = [
         "My cats names are Barnacle and Bean. The orange one is Barnacle, the calico one is Bean.",
         "I like cats. Stories of cats. Pictures of my cats. Just cats, cat facts, and cat stuff.",
-        "Barnacle headbutts, nips, and will do tricks in the bathroom. Bean is more sassy, and drinks from the tap as bougie as possible. They both love to sit by the window."
+        "Barnacle headbutts, nips, and will do tricks in the bathroom. Bean is more sassy, and drinks from the tap to be as bougie as possible. They both love to sit by the window."
     ];
 
     paragraphs.forEach((text) => {

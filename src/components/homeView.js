@@ -28,6 +28,10 @@ export function createHomeView(onNavigate) {
             summary: "Background and personality notes about Barnacle and Bean."
         },
         {
+            name: "Articles",
+            summary: "Curated external cat-care reads with personal reactions."
+        },
+        {
             name: "Gallery",
             summary: "Photo grid with lightbox support for cat pictures."
         },
@@ -36,16 +40,12 @@ export function createHomeView(onNavigate) {
             summary: "Latest post list with single-post reading view."
         },
         {
-            name: "Articles",
-            summary: "Curated external cat-care reads with personal reactions."
+            name: "Shop",
+            summary: "Favorite picks and affiliate-style cat product links."
         },
         {
             name: "Facts",
             summary: "Short, fun cat facts section for quick reading."
-        },
-        {
-            name: "Shop",
-            summary: "Favorite picks and affiliate-style cat product links."
         },
         {
             name: "Events",

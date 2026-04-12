@@ -21,11 +21,11 @@ export function createNavigation(onNavigate, activePage = "home") {
     const pages = [
         { id: "home", label: "Landing" },
         { id: "about", label: "About" },
+        { id: "articles", label: "Articles" },
         { id: "gallery", label: "Gallery" },
         { id: "blog", label: "Blog" },
-        { id: "articles", label: "Articles" },
-        { id: "facts", label: "Facts" },
         { id: "shop", label: "Shop" },
+        { id: "facts", label: "Facts" },
         { id: "events", label: "Events" },
         { id: "contact", label: "Contact" },
     ];

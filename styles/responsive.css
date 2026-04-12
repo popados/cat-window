@@ -10,11 +10,11 @@
     }
 
     .shop-view-grid {
-        grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     }
 
     .gallery-view-grid {
-        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     }
 }
 
@@ -90,6 +90,7 @@
     .facts-view,
     .shop-view,
     .events-view,
+    .contact-view,
     .gallery-view {
         padding: 1rem;
     }
