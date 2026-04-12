@@ -2,6 +2,25 @@ import express from "express";
 
 const app = express();
 const port = process.env.PORT || 3000;
+const isProd = process.env.NODE_ENV === "production";
+const PROD_ORIGIN = "https://thecatwindow.com";
+
+// CORS — allow production origin or localhost in dev
+app.use((req, res, next) => {
+	const origin = req.headers.origin;
+	const allowed = isProd
+		? [PROD_ORIGIN]
+		: [PROD_ORIGIN, "http://localhost:5173", "http://127.0.0.1:5173"];
+
+	if (origin && allowed.includes(origin)) {
+		res.setHeader("Access-Control-Allow-Origin", origin);
+	}
+	res.setHeader("Access-Control-Allow-Methods", "GET, POST, OPTIONS");
+	res.setHeader("Access-Control-Allow-Headers", "Content-Type");
+
+	if (req.method === "OPTIONS") return res.sendStatus(204);
+	next();
+});
 
 app.use(express.json());
 
@@ -44,5 +63,6 @@ app.post("/api/impressions", (req, res) => {
 });
 
 app.listen(port, () => {
-	console.log(`API server running on http://localhost:${port}`);
+	const base = isProd ? PROD_ORIGIN : `http://localhost:${port}`;
+	console.log(`API server running — ${base} (NODE_ENV=${process.env.NODE_ENV || "development"})`);
 });
