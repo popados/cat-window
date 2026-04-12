@@ -1,4 +1,4 @@
-export function createHomeView() {
+export function createHomeView(onNavigate) {
     const container = document.createElement("section");
     container.className = "landing-view";
 
@@ -20,12 +20,12 @@ export function createHomeView() {
 
     const sections = [
         {
-            page: "home.html",
+            page: "../index.html",
             name: "Home",
             summary: "Hero banner with intro, profile image, and site welcome."
         },
         {
-            page: "about.html",
+            page: "../index.html",
             name: "About",
             summary: "Background and personality notes about Barnacle and Bean."
         },
@@ -78,6 +78,16 @@ export function createHomeView() {
         const jumpLink = document.createElement("a");
         jumpLink.href = `./sections/${section.page}`;
         jumpLink.textContent = "Go to section";
+
+        if (section.name === "About") {
+            jumpLink.href = "#about";
+            jumpLink.onclick = (event) => {
+                event.preventDefault();
+                if (typeof onNavigate === "function") {
+                    onNavigate("about");
+                }
+            };
+        }
 
         panel.appendChild(badge);
         panel.appendChild(heading);

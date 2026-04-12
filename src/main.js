@@ -5,6 +5,7 @@ import { createNavigation } from "./components/navigation.js";
 import { createContactView } from "./components/contactView.js";
 import { createAboutView } from "./components/aboutView.js";
 import { createHomeView } from "./components/homeView.js";
+import { createArticlesView } from "./components/articlesView.js";
 
 const app = document.getElementById("app");
 
@@ -13,10 +14,12 @@ let currentPage = "home";
 function renderApp(data = {}) {
     app.innerHTML = "";
 
-    const nav = createNavigation((page) => {
+    const handleNavigate = (page) => {
         currentPage = page;
         renderApp(data);
-    }, currentPage);
+    };
+
+    const nav = createNavigation(handleNavigate, currentPage);
 
     app.appendChild(nav);
 
@@ -29,8 +32,12 @@ function renderApp(data = {}) {
             const aboutView = createAboutView();
             app.appendChild(aboutView);
             break;
+        case "articles":
+            const articlesView = createArticlesView();
+            app.appendChild(articlesView);
+            break;
         default:
-            const homeView = createHomeView();
+            const homeView = createHomeView(handleNavigate);
             app.appendChild(homeView);
     }
 

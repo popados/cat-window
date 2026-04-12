@@ -5,6 +5,11 @@ import { defineConfig } from "vite";
 const projectRoot = fileURLToPath(new URL(".", import.meta.url));
 
 export default defineConfig({
+    server: {
+        proxy: {
+            "/api": "http://localhost:3000"
+        }
+    },
     build: {
         rollupOptions: {
             input: {

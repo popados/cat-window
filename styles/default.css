@@ -1,10 +1,14 @@
-
 :root {
 --main-color: #d8d2e1;
 --secondary-color: #34435e;
 --nav-bg-color: #1c1d21;
 --link-color: #f0b729;
 --last-color: #a4d2d1;
+--active-color: #b8932f;
+--primary-color: #586BA4;
+--accent-color: #FFE74C;
+--text-color: #221D23;
+--accent-color-2: #F78764;
 }
 
 * {
@@ -14,7 +18,7 @@ box-sizing: border-box;
 } 
 
 body {
-color: white;
+color: var(--text-color);
 width: 100%;
 height: 100vh;
 background-color: rgb(67,67,67);
@@ -24,7 +28,7 @@ font-size: 16px;
 
 
 a {
-color:orange;
+color: var(--link-color);
 text-decoration: none;
 }
 
