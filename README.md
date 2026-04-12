@@ -18,24 +18,50 @@
 
 This project now uses Vite for local development and production builds.
 
-### Commands
+### Prerequisites
 
-- `npm install`
-- `npm run dev`
-- `npm run build`
-- `npm run preview`
+- [Node.js](https://nodejs.org/) v18+
+- npm v9+
+
+### Install dependencies
+
+```bash
+npm install
+```
+
+### Dev server
+
+```bash
+npm run dev
+```
+Starts Vite at `http://localhost:5173` and opens the browser automatically.
+
+### Production build
+
+```bash
+npm run build
+```
+Outputs optimised assets to `dist/`.
+
+### Preview production build locally
+
+```bash
+npm run preview
+```
+
+***
 
 ### To Do List
 
 - Landing Page
-  - sections
+  - sections [x]
     - h2 element
       - font color
       - spacing
     - Write blurb
 - About
-  - Blurb
-  - Styling
+  - Blurb [x]
+  - Styling [x]
   - Paragraphs(?)
 - Articles
   - Fix the api
@@ -43,9 +69,9 @@ This project now uses Vite for local development and production builds.
     - display random articles daily
 - Blog
   - Post
-    - Generate with markdown
+    - Generate with markdown [x]
     - Styled
-    - Expandable
+    - Expandable [x]
   - History
 - Gallery
   - Load random pictures
@@ -122,7 +148,6 @@ What to say:
 - Health
 - Mannerisms
 - Photos links
-
 
 `The Cat Window is a heartfelt blend of gallery, blog, and resource hub dedicated to the lives and memories of six beloved cats. Visitors can explore a personal photo collection, read stories and tributes, discover helpful articles about feline behavior, and browse curated affiliate products for cat owners. The site also features fun trivia, educational insights, and a regularly updated list of local cat-related events, such as adoptions, shows, and cat café hours—bringing together community, knowledge, and remembrance in one place.`
 

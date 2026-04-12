@@ -161,8 +161,8 @@ p {
 .section-panel h2 {
     margin-bottom: 0.55rem;
     color: #a1a1a1;
-    text-transform: uppercase;
-    font-size: 1.1rem;
+    /* text-transform: uppercase; */
+    /* font-size: 1.1rem; */
 }
 
 .section-panel p {
@@ -224,10 +224,10 @@ p {
     border: 3px solid #000;
     box-shadow: 5px 5px 0 #8e4747;
     /* line-height: 1.7; */
-    font-size: 1.2rem;
+    /* font-size: 1.2rem; */
     /* font-weight: 100; */
     padding: 1.3rem;
-    line-height: 1.7;
+    /* line-height: 1.7; */
 }
 
 .about-view p:last-child {

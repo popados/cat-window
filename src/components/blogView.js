@@ -31,6 +31,19 @@ function parseFrontmatter(raw) {
     return { meta, body };
 }
 
+function toCacheSafeImageUrl(src, meta, slug) {
+    const joiner = src.includes("?") ? "&" : "?";
+
+    // In dev, force fresh image fetches so markdown/image tweaks show immediately.
+    if (import.meta.env.DEV) {
+        return `${src}${joiner}v=${Date.now()}`;
+    }
+
+    // In production, use a stable version token when available.
+    const token = meta.updated || meta.date || slug;
+    return `${src}${joiner}v=${encodeURIComponent(token)}`;
+}
+
 export function createBlogView() {
     const container = document.createElement("section");
     container.className = "blog-view";
@@ -95,7 +108,7 @@ export function createBlogView() {
             imgGrid.className = "post-card-images";
             images.forEach((src) => {
                 const img = document.createElement("img");
-                img.src = src;
+                img.src = toCacheSafeImageUrl(src, meta, slug);
                 img.alt = meta.title || "";
                 img.loading = "lazy";
                 imgGrid.appendChild(img);

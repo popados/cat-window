@@ -72,5 +72,11 @@ function renderApp(data = {}) {
     renderApp();
 })();
 
+if (import.meta.hot) {
+    import.meta.hot.accept(() => {
+        renderApp();
+    });
+}
+
 
 

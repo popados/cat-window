@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="CW window monogram favicon">
+  <rect width="64" height="64" rx="12" fill="#2a2f50" />
+
+  <!-- Micro window frame -->
+  <rect x="9" y="9" width="46" height="46" rx="7" fill="none" stroke="#000" stroke-width="5" />
+  <rect x="12" y="12" width="40" height="40" rx="5" fill="none" stroke="#fff89a" stroke-width="3" />
+
+  <!-- Simplified panes -->
+  <path d="M32 14V50" stroke="#000" stroke-width="3" stroke-linecap="square" />
+  <path d="M14 32H50" stroke="#000" stroke-width="3" stroke-linecap="square" />
+
+  <!-- Chunky monogram for 16x16 readability -->
+  <text x="32" y="40" text-anchor="middle" font-size="24" font-family="Arial Black, Impact, sans-serif" font-weight="900" letter-spacing="0.5" fill="#fff89a" stroke="#000" stroke-width="1.6" paint-order="stroke">CW</text>
+</svg>

@@ -1,10 +1,11 @@
 ---
 title: Morning Routine with Whiskers
 date: 2025-12-05
+updated: 2026-04-12
 excerpt: From breakfast demands to window bird-watching, this post follows the daily cat rhythm at home.
 images:
   - /img/cat-pictures/955B83BF-D906-47E2-8E58-69A2C34B2674_1_105_c.jpeg
-  - /img/cat-pictures/063447B0-D6D1-40B6-97CC-F8056CF8B3AA_1_105_c.jpeg
+  - img/cat-pictures/C1E98341-DC73-45FB-93FF-815FF8BDC9D3_1_105_c.jpeg
 ---
 
 ## 5:47 AM
