@@ -11,11 +11,6 @@ export default defineConfig({
             targets: [{ src: "img", dest: "" }]
         })
     ],
-    server: {
-        proxy: {
-            "/api": "http://localhost:3000"
-        }
-    },
     build: {
         rollupOptions: {
             input: {

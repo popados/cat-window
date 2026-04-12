@@ -1,8 +1,10 @@
+const IMPRESSIONS_KEY = "cat-window:impressions";
+
 export async function fetchArticles() {
-	const response = await fetch("/api/articles");
+	const response = await fetch("/articles.json");
 
 	if (!response.ok) {
-		throw new Error("Unable to load articles from server.");
+		throw new Error("Unable to load articles.");
 	}
 
 	const payload = await response.json();
@@ -10,24 +12,20 @@ export async function fetchArticles() {
 }
 
 export async function fetchImpressions() {
-	const response = await fetch("/api/impressions");
-
-	if (!response.ok) {
-		throw new Error("Unable to load impressions from server.");
+	try {
+		const raw = localStorage.getItem(IMPRESSIONS_KEY);
+		return raw ? JSON.parse(raw) : {};
+	} catch {
+		return {};
 	}
-
-	const payload = await response.json();
-	return payload.impressions || {};
 }
 
 export async function saveImpression(href, text) {
-	const response = await fetch("/api/impressions", {
-		method: "POST",
-		headers: { "Content-Type": "application/json" },
-		body: JSON.stringify({ href, text })
-	});
-
-	if (!response.ok) {
+	try {
+		const current = await fetchImpressions();
+		current[href] = text;
+		localStorage.setItem(IMPRESSIONS_KEY, JSON.stringify(current));
+	} catch {
 		throw new Error("Unable to save impression.");
 	}
 }
