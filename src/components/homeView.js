@@ -9,8 +9,8 @@ export function createHomeView(onNavigate) {
     title.textContent = "The Cat Window";
 
     const subtitle = document.createElement("p");
-    subtitle.textContent = "A panel landing page for every section in the original cat-gallery site.";
-
+    subtitle.textContent = "The Cat Window is a heartfelt blend of fact, personality, and resourcefulness. Aiming to provide a comprehensive view of feline friends through various sections.";
+    
     hero.appendChild(title);
     hero.appendChild(subtitle);
     container.appendChild(hero);
@@ -21,23 +21,23 @@ export function createHomeView(onNavigate) {
     const sections = [
         {
             name: "Home",
-            summary: "Hero banner with intro, profile image, and site welcome."
+            summary: "Hero banner and panels showing each page."
         },
         {
             name: "About",
-            summary: "Background and personality notes about Barnacle and Bean."
+            summary: "Background and personality notes about my cats. Includes information on the site."
         },
         {
             name: "Articles",
             summary: "Curated external cat-care reads with personal reactions."
         },
         {
-            name: "Gallery",
-            summary: "Photo grid with lightbox support for cat pictures."
+            name: "Blog",
+            summary: "Single-post reading view that includes a history of posts."
         },
         {
-            name: "Blog",
-            summary: "Latest post list with single-post reading view."
+            name: "Gallery",
+            summary: "Photo grid with lightbox support for cat pictures."
         },
         {
             name: "Shop",
@@ -45,12 +45,17 @@ export function createHomeView(onNavigate) {
         },
         {
             name: "Facts",
-            summary: "Short, fun cat facts section for quick reading."
+            summary: "Short cat facts section for quick reading."
         },
         {
             name: "Events",
             summary: "Upcoming cat events and date highlights."
+        },
+        {
+            name: "Contact",
+            summary: "Contact and social media links to connect."
         }
+
     ];
 
     sections.forEach((section, index) => {
@@ -70,7 +75,7 @@ export function createHomeView(onNavigate) {
         const jumpLink = document.createElement("a");
         jumpLink.textContent = "Go to section";
 
-        const spaPages = { Home: "home", About: "about", Gallery: "gallery", Blog: "blog", Articles: "articles", Facts: "facts", Shop: "shop", Events: "events" };
+        const spaPages = { Home: "home", About: "about", Gallery: "gallery", Blog: "blog", Articles: "articles", Facts: "facts", Shop: "shop", Events: "events", Contact: "contact" };
         const spaTarget = spaPages[section.name];
         jumpLink.href = `#${spaTarget}`;
         jumpLink.onclick = (event) => {

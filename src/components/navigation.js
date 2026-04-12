@@ -19,11 +19,11 @@ export function createNavigation(onNavigate, activePage = "home") {
     linksWrapper.className = "nav-links-wrapper";
 
     const pages = [
-        { id: "home", label: "Landing" },
+        { id: "home", label: "Home" },
         { id: "about", label: "About" },
         { id: "articles", label: "Articles" },
-        { id: "gallery", label: "Gallery" },
         { id: "blog", label: "Blog" },
+        { id: "gallery", label: "Gallery" },
         { id: "shop", label: "Shop" },
         { id: "facts", label: "Facts" },
         { id: "events", label: "Events" },
