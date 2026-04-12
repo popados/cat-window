@@ -20,42 +20,34 @@ export function createHomeView(onNavigate) {
 
     const sections = [
         {
-            page: "../index.html",
             name: "Home",
             summary: "Hero banner with intro, profile image, and site welcome."
         },
         {
-            page: "../index.html",
             name: "About",
             summary: "Background and personality notes about Barnacle and Bean."
         },
         {
-            page: "gallery.html",
             name: "Gallery",
             summary: "Photo grid with lightbox support for cat pictures."
         },
         {
-            page: "blog.html",
             name: "Blog",
             summary: "Latest post list with single-post reading view."
         },
         {
-            page: "articles.html",
             name: "Articles",
             summary: "Curated external cat-care reads with personal reactions."
         },
         {
-            page: "facts.html",
             name: "Facts",
             summary: "Short, fun cat facts section for quick reading."
         },
         {
-            page: "shop.html",
             name: "Shop",
             summary: "Favorite picks and affiliate-style cat product links."
         },
         {
-            page: "events.html",
             name: "Events",
             summary: "Upcoming cat events and date highlights."
         }
@@ -76,18 +68,15 @@ export function createHomeView(onNavigate) {
         text.textContent = section.summary;
 
         const jumpLink = document.createElement("a");
-        jumpLink.href = `./sections/${section.page}`;
         jumpLink.textContent = "Go to section";
 
-        if (section.name === "About") {
-            jumpLink.href = "#about";
-            jumpLink.onclick = (event) => {
-                event.preventDefault();
-                if (typeof onNavigate === "function") {
-                    onNavigate("about");
-                }
-            };
-        }
+        const spaPages = { Home: "home", About: "about", Gallery: "gallery", Blog: "blog", Articles: "articles", Facts: "facts", Shop: "shop", Events: "events" };
+        const spaTarget = spaPages[section.name];
+        jumpLink.href = `#${spaTarget}`;
+        jumpLink.onclick = (event) => {
+            event.preventDefault();
+            if (typeof onNavigate === "function") onNavigate(spaTarget);
+        };
 
         panel.appendChild(badge);
         panel.appendChild(heading);
