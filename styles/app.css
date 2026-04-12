@@ -134,7 +134,7 @@
 .section-panel-grid {
     display: grid;
     gap: 1rem;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
 }
 
 .section-panel {
@@ -185,7 +185,7 @@
 .about-view {
     background: #2a2f50;
     border: 4px solid #000;
-    box-shadow: 8px 8px 0 #000;
+    box-shadow: 8px 8px 0 #641212;
     padding: 1.5rem;
 }
 
@@ -216,7 +216,7 @@
 .articles-view {
     background: #2a2f50;
     border: 4px solid #000;
-    box-shadow: 8px 8px 0 #000;
+    box-shadow: 8px 8px 0 #641212;
     padding: 1.5rem;
 }
 
@@ -235,7 +235,7 @@
     background: #20203E;
     color: #fefefe;
     border: 3px solid #000;
-    box-shadow: 5px 5px 0 #8e4747;
+    box-shadow: 5px 5px #8e4747;
     line-height: 1.7;
     padding: 1rem;
 }
@@ -243,7 +243,7 @@
 .blog-view {
     background: #2a2f50;
     border: 4px solid #000;
-    box-shadow: 8px 8px 0 #000;
+    box-shadow: 8px 8px 0 #641212;
     padding: 1.5rem;
 }
 
@@ -269,7 +269,7 @@
 .blog-view .post-card h3 {
     display: inline-block;
     margin-bottom: 0.6rem;
-    background: #8e4747;
+    background: #6d2d2d;
     color: #fffaf5;
     border: 2px solid #000;
     box-shadow: 4px 4px 0 #000;
@@ -279,7 +279,7 @@
 .gallery-view {
     background: #2a2f50;
     border: 3px solid #000;
-    box-shadow: 8px 8px 0 #8e4747;
+    box-shadow: 8px 8px 0 #641212;
     padding: 1.5rem;
 }
 
@@ -303,7 +303,7 @@
     width: 100%;
     height: auto;
     border: 3px solid #000;
-    box-shadow: 6px 6px 0 #8e4747;
+    box-shadow: 5px 5px 0 #8e4747;
     transition: transform 0.2s ease;
 }
 
@@ -316,7 +316,7 @@
     background: #2a2f50;
     color: #fffaf5;
     border: 3px solid #000;
-    box-shadow: 8px 8px 0 #8e4747;
+    box-shadow: 8px 8px 0 #641212;
     padding: 1.5rem;
 }
 
@@ -337,10 +337,10 @@
 
 .facts-view-list li {
     padding: 0.75rem 0.75rem 0.75rem 2rem;
-    margin-bottom: 0.6rem;
+    margin-bottom: 1.2rem;
     background: #1c1d21;
     border: 2px solid #000;
-    box-shadow: 4px 4px 0 #641212;
+    box-shadow: 5px 5px 0 #8e4747;
     position: relative;
 }
 
@@ -354,7 +354,7 @@
 .shop-view {
     background: #2a2f50;
     border: 4px solid #000;
-    box-shadow: 8px 8px 0 #000;
+    box-shadow: 8px 8px 0 #641212;
     padding: 1.5rem;
 }
 
@@ -378,7 +378,7 @@
     background: #20203E;
     color: #fffaf5;
     border: 3px solid #000;
-    box-shadow: 5px 5px 0 #641212;
+    box-shadow: 5px 5px 0 #8e4747;
     padding: 0.9rem;
     display: flex;
     flex-direction: column;
@@ -387,7 +387,7 @@
 
 .shop-card h3 {
     display: inline-block;
-    background: #8e4747;
+    background: #6d2d2d;
     color: #fffaf5;
     border: 2px solid #000;
     box-shadow: 3px 3px 0 #000;
@@ -438,10 +438,10 @@
 
 .events-view-list li {
     padding: 0.75rem 1rem;
-    margin-bottom: 0.6rem;
+    margin-bottom: 1.2rem;
     background: #1c1d21;
     border: 2px solid #000;
-    box-shadow: 4px 4px 0 #8e4747;
+    box-shadow: 5px 5px 0 #8e4747;
 }
 
 .events-view-list li strong {
