@@ -344,11 +344,11 @@
     position: relative;
 }
 
-.facts-view-list li::before {
+/* .facts-view-list li::before {
     content: "🐾";
     position: absolute;
     left: 0.5rem;
-}
+} */
 
 /* SHOP VIEW */
 .shop-view {
