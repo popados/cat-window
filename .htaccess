@@ -1,0 +1,15 @@
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  RewriteBase /
+
+  # Already inside dist/ — leave it alone
+  RewriteCond %{REQUEST_URI} ^/dist/ [NC]
+  RewriteRule ^ - [L]
+
+  # If the requested file exists inside dist/, serve it from there
+  RewriteCond %{DOCUMENT_ROOT}/dist%{REQUEST_URI} -f
+  RewriteRule ^(.*)$ /dist/$1 [L]
+
+  # Root request falls back to dist/index.html
+  RewriteRule ^$ /dist/index.html [L]
+</IfModule>
