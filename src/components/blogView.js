@@ -49,7 +49,7 @@ export function createBlogView() {
     container.className = "blog-view";
 
     const title = document.createElement("h1");
-    title.textContent = "Latest Blog Posts";
+    title.textContent = "Blog Posts";
     container.appendChild(title);
 
     const posts = Object.entries(rawPosts)

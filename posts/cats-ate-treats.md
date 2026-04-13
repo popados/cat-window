@@ -9,7 +9,7 @@ images:
 
 ## The Great Treat Caper
 
-It started innocently enough. I left the treat drawer open for maybe five minutes while I answered the door. By the time I got back, Barnacle had knocked three bags onto the floor and Bean was sitting in the middle of them like a crime scene supervisor who had no involvement whatsoever.
+Sneaky, cheeky, and totally obnoxious. Not being hasty has left my cats going after the treats themselves. I left a stash of treats in the bag inside my room. Two weeks later. Barnacle broke into three bags that were on the floor and Bean was sitting in the middle of them like a crime scene supervisor who had no involvement whatsoever.
 
 ## The Damage Report
 
@@ -25,4 +25,4 @@ Barnacle absolutely did it. He has the capability, the motivation, and the compl
 
 ## What I Learned
 
-Nothing. I still leave the drawer open sometimes. They are too cute to be truly angry at and they know it.
+Nothing. I left some treats out in the bag again. They are too cute to be truly angry at and they know it. They ate the treats again.
