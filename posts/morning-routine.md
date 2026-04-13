@@ -5,12 +5,12 @@ updated: 2026-04-12
 excerpt: From breakfast demands to window bird-watching, this post follows the daily cat rhythm at home.
 images:
   - /img/cat-pictures/955B83BF-D906-47E2-8E58-69A2C34B2674_1_105_c.jpeg
-  - img/cat-pictures/C1E98341-DC73-45FB-93FF-815FF8BDC9D3_1_105_c.jpeg
+  - /img/cat-pictures/C1E98341-DC73-45FB-93FF-815FF8BDC9D3_1_105_c.jpeg
 ---
 
-## 5:47 AM
+## 6:47 AM
 
-Barnacle sits on my chest and stares at me. Does not meow. Does not move. Just stares with the full weight of his entire being until I wake up. This has been his method for four years and it has a 100% success rate.
+We've been awake for an hour or two now. Barnacle sits next to me and stares at me. Begging for attention. He begins stretching(read scratching) on my leg. If I am not promptly getting everything ready for the day by now. He knows. He will insist. It will happen.
 
 ## The Breakfast Protocol
 

@@ -73,16 +73,21 @@ export function createBlogView() {
         card.className = "post-card";
         card.dataset.slug = slug;
 
+        const header = document.createElement("div");
+        header.className = "post-card-header";
+
         const heading = document.createElement("h3");
         heading.textContent = meta.title || slug;
-        card.appendChild(heading);
+        header.appendChild(heading);
 
         if (meta.date) {
             const date = document.createElement("span");
             date.className = "post-card-date";
             date.textContent = meta.date;
-            card.appendChild(date);
+            header.appendChild(date);
         }
+
+        card.appendChild(header);
 
         const excerpt = document.createElement("p");
         excerpt.className = "post-card-excerpt";
