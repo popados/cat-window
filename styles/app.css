@@ -100,7 +100,7 @@ p {
 
 .landing-hero h1 {
     display: inline-block;
-    background: #fff89a;
+    background: #ffdc9a;
     color: #111;
     border: 4px solid #000;
     box-shadow: 6px 6px 0 #000;
@@ -160,7 +160,7 @@ p {
     display: inline-block;
     margin-bottom: 0.7rem;
     padding: 0.15rem 0.5rem;
-    background: #fff89a;
+    background: #ffdc9a;
     color: #111;
     border: 2px solid #000;
     font-weight: 700;
@@ -209,7 +209,7 @@ p {
 .about-view h1 {
     display: inline-block;
     margin-bottom: 2.2rem;
-    background: #fff89a;
+    background: #ffdc9a;
     color: #111;
     border: 3px solid #000;
     box-shadow: 4px 4px 0 #000;
@@ -258,7 +258,7 @@ p {
 .articles-view h1 {
     display: inline-block;
     margin-bottom: 2.2rem;
-    background: #fff89a;
+    background: #ffdc9a;
     color: #111;
     border: 3px solid #000;
     box-shadow: 4px 4px 0 #000;
@@ -424,7 +424,7 @@ p {
 .blog-view h1 {
     display: inline-block;
     margin-bottom: 2.2rem;
-    background: #fff89a;
+    background: #ffdc9a;
     color: #111;
     border: 3px solid #000;
     box-shadow: 4px 4px 0 #000;
@@ -443,20 +443,21 @@ p {
 .blog-view .post-card h3 {
     display: inline-block;
     margin-bottom: 0.6rem;
-    background: #6d2d2d;
+    background: #30327c;
     color: #fffaf5;
     border: 2px solid #000;
-    box-shadow: 4px 4px 0 #000;
-    padding: 0.25rem 0.5rem;
+    box-shadow: 4px 4px 0 #8e4747;
+    padding:.3rem 0.5rem;
+    margin-right: 1rem;
 }
 
 .post-card-date {
     display: inline-block;
     margin: 0 0 0.6rem 0.5rem;
-    background: #2a2f50;
+    background: #535353;
     color: #fff89a;
     border: 2px solid #000;
-    padding: 0.12rem 0.45rem;
+    padding: 0.3rem;
     font-size: 0.78rem;
     font-weight: 700;
     vertical-align: middle;
@@ -484,7 +485,7 @@ p {
 .post-card-body h2 {
     display: inline-block;
     margin: 0.8rem 0 0.6rem;
-    background: #fff89a;
+    background: #ffdc9a;
     color: #111;
     border: 2px solid #000;
     box-shadow: 3px 3px 0 #000;
@@ -597,7 +598,7 @@ p {
 .gallery-view h1 {
     display: inline-block;
     margin-bottom: 2.2rem;
-    background: #fff89a;
+    background: #ffdc9a;
     color: #111;
     border: 3px solid #000;
     box-shadow: 4px 4px 0 #000;
@@ -622,6 +623,196 @@ p {
     transform: rotate(-2deg) scale(1.04);
 }
 
+.gallery-tabs {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-bottom: 2rem;
+    justify-content: center;
+    align-items: center;
+}
+
+.gallery-tab {
+    background: #1c1d21;
+    color: #fffaf5;
+    border: 3px solid #000;
+    box-shadow: 4px 4px 0 #000;
+    padding: 0.6rem 1.2rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: all 0.2s ease;
+}
+
+.gallery-tab:hover {
+    background: #8e4747;
+    transform: translateY(-3px);
+}
+
+.gallery-tab.active {
+    background: #ffdc9a;
+    color: #111;
+    border: 3px solid #000;
+    box-shadow: 4px 4px 0 #000;
+}
+
+.gallery-viewer-overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 999;
+    background: rgba(0, 0, 0, 0.72);
+    display: grid;
+    place-items: center;
+    padding: 1rem;
+}
+
+.gallery-viewer-overlay[hidden] {
+    display: none;
+}
+
+.gallery-viewer-modal {
+    width: min(980px, 100%);
+    max-height: calc(100vh - 2rem);
+    overflow: auto;
+    background: #20203E;
+    border: 3px solid #000;
+    box-shadow: 8px 8px 0 #8e4747;
+    padding: 1rem;
+}
+
+.gallery-viewer-close {
+    display: block;
+    margin-left: auto;
+    margin-bottom: 0.8rem;
+    background: #535353;
+    color: #fffaf5;
+    border: 3px solid #000;
+    box-shadow: 3px 3px 0 #000;
+    padding: 0.35rem 0.7rem;
+    text-transform: uppercase;
+    font-weight: 700;
+    cursor: pointer;
+    font: inherit;
+    font-size: 0.8rem;
+}
+
+.gallery-viewer-close:hover {
+    background: #641212;
+}
+
+.gallery-viewer-image-wrap {
+    width: 100%;
+}
+
+.gallery-viewer-image {
+    display: block;
+    width: 100%;
+    height: auto;
+    max-width: 100%;
+    border: 3px solid #000;
+    box-shadow: 5px 5px 0 #641212;
+}
+
+.gallery-viewer-controls {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.8rem;
+    margin-bottom: 0.9rem;
+}
+
+.gallery-viewer-btn {
+    background: #1c1d21;
+    color: #fffaf5;
+    border: 3px solid #000;
+    box-shadow: 3px 3px 0 #000;
+    padding: 0.45rem 0.85rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    cursor: pointer;
+    font: inherit;
+    font-size: 0.85rem;
+}
+
+.gallery-viewer-btn:hover {
+    background: #641212;
+}
+
+.gallery-viewer-caption {
+    margin: 0;
+    color: #fff89a;
+    font-weight: 700;
+    letter-spacing: 0.4px;
+}
+
+body.modal-open {
+    overflow: hidden;
+}
+
+.albums-container {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.album {
+    display: none;
+    animation: fadeIn 0.3s ease;
+}
+
+.album.active {
+    display: block;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.album h2 {
+    color: #fff89a;
+    background: #535353;
+    display: inline-block;
+    border: 3px solid #000;
+    box-shadow: 4px 4px 0 #000;
+    padding: 0.4rem 0.8rem;
+    margin-bottom: 0.5rem;
+    font-size: 1.3rem;
+}
+
+.album-description {
+    color: #d7d7d7;
+    margin-bottom: 1.5rem;
+    font-size: 1rem;
+    font-style: italic;
+}
+
+.gallery-grid {
+    display: grid;
+    gap: 1.2rem;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+}
+
+.gallery-grid img {
+    width: 100%;
+    height: auto;
+    border: 3px solid #000;
+    box-shadow: 5px 5px 0 #8e4747;
+    transition: transform 0.2s ease;
+    cursor: pointer;
+}
+
+.gallery-grid img:hover {
+    transform: rotate(-2deg) scale(1.04);
+}
+
 /* FACTS VIEW */
 .facts-view {
     background: #2a2f50;
@@ -634,7 +825,7 @@ p {
 .facts-view h1 {
     display: inline-block;
     margin-bottom: 2.2rem;
-    background: #fff89a;
+    background: #ffdc9a;
     color: #111;
     border: 3px solid #000;
     box-shadow: 4px 4px 0 #000;
@@ -672,7 +863,7 @@ p {
 .shop-view h1 {
     display: inline-block;
     margin-bottom: 2.2rem;
-    background: #fff89a;
+    background: #ffdc9a;
     color: #111;
     border: 3px solid #000;
     box-shadow: 4px 4px 0 #000;
@@ -706,9 +897,10 @@ p {
 }
 
 .shop-card a {
-    display: inline-block;
+    display: block;
+    margin-left: auto;
     margin-top: auto;
-    background: #fff89a;
+    background: #ffdc9a;
     color: #111;
     border: 2px solid #000;
     box-shadow: 3px 3px 0 #000;
@@ -735,7 +927,7 @@ p {
 .events-view h1 {
     display: inline-block;
     margin-bottom: 2.2rem;
-    background: #fff89a;
+    background: #ffdc9a;
     color: #111;
     border: 3px solid #000;
     box-shadow: 4px 4px 0 #000;
@@ -772,7 +964,7 @@ p {
 .contact-view h1 {
     display: inline-block;
     margin-bottom: 2.2rem;
-    background: #fff89a;
+    background: #ffdc9a;
     color: #111;
     border: 3px solid #000;
     box-shadow: 4px 4px 0 #000;

@@ -90,6 +90,18 @@ body {
   box-shadow: 5px 5px 0 var(--panel-alt);
 }
 
+.gallery-grid + h2 {
+  margin-top: 2rem;
+  margin-bottom: 0.5rem;
+}
+
+.album-description {
+  color: #d7d7d7;
+  margin-bottom: 1.5rem;
+  font-size: 0.95rem;
+  font-style: italic;
+}
+
 .post-card,
 .item-card {
   background: var(--panel-bg);

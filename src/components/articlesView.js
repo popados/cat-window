@@ -56,7 +56,7 @@ async function loadArticles(list, state) {
 
             const impressionLabel = document.createElement("span");
             impressionLabel.className = "item-card-impression-label";
-            impressionLabel.textContent = "My impression";
+            impressionLabel.textContent = "Impression";
 
             const savedText = impressions[article.href] || "";
 

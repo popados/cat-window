@@ -16,7 +16,7 @@ const app = document.getElementById("app");
 
 let currentPage = "home";
 
-function renderApp(data = {}) {
+async function renderApp(data = {}) {
     app.innerHTML = "";
 
     const handleNavigate = (page) => {
@@ -42,7 +42,7 @@ function renderApp(data = {}) {
             app.appendChild(blogView);
             break;
         case "gallery":
-            const galleryView = createGalleryView();
+            const galleryView = await createGalleryView();
             app.appendChild(galleryView);
             break;
         case "facts":

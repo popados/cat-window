@@ -157,6 +157,43 @@ What to say:
 
 ***
 
+### Day 03 | 4/13/2026 - Monday
+
+Working on readability and other accessibility features.
+
+Looking to check how this site stacks up against other cat blogs.
+
+Time to start SEO next.
+
+TODO:
+- Accessibility
+  - Readability [x]
+  - What kind of colors?
+  - How easy is the website to navigate?
+- Shop
+  - Affiliate links
+  - Images
+  - Blurb
+- Gallery
+  - Albums [x]
+  - Captions
+  - Overlay [x]
+- Blog
+  - Update stories and pictures
+- Facts
+  - Saved and randomly loads new ones everytime the page is refreshed
+- Events
+  - Look at organizations and list their events and registration
+- Contact
+  - Get the forms to work and have people send feedback
+- Articles
+  - Pull json and feed it to my website. Must manually change because no node server support.
+  - Impressions saved with the data.
+- About [x]
+
+
+***
+
 ## End of Document
 
 ***
