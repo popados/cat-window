@@ -19,7 +19,7 @@ All three types were hit:
 - **Temptations** — the bag was chewed through from the bottom corner
 - **Squeeze tubes** — two were missing caps, one had been dragged behind the couch
 
-## Barnacle Did It
+## Barnacle Made the Move
 
 Barnacle absolutely did it. He has the capability, the motivation, and the complete lack of remorse. Bean was probably nearby offering moral support.
 

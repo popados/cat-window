@@ -3,7 +3,7 @@ export function createShopView() {
     container.className = "shop-view";
 
     const title = document.createElement("h1");
-    title.textContent = "Shop My Favorites";
+    title.textContent = "Affiliate Shop";
     container.appendChild(title);
 
     const items = [
