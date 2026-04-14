@@ -1,5 +1,12 @@
 import { fetchArticles, fetchImpressions, saveImpression } from "../api/api.js";
 
+const REACTION_OPTIONS = [
+    { key: "heart-eyes", emoji: "😻", label: "Loved it" },
+    { key: "smile", emoji: "😸", label: "Helpful" },
+    { key: "thinking", emoji: "🤔", label: "Interesting" },
+    { key: "paws", emoji: "🐾", label: "Saving this" },
+];
+
 export function createArticlesView() {
     const container = document.createElement("section");
     container.className = "articles-view";
@@ -56,88 +63,90 @@ async function loadArticles(list, state) {
 
             const impressionLabel = document.createElement("span");
             impressionLabel.className = "item-card-impression-label";
-            impressionLabel.textContent = "Impression";
+            impressionLabel.textContent = "Impressions";
 
-            const savedText = impressions[article.href] || "";
+            let selectedReaction = impressions[article.href] || null;
 
             const display = document.createElement("p");
             display.className = "item-card-impression-display";
-            display.textContent = savedText || "No impression written yet.";
-            if (!savedText) display.classList.add("is-empty");
-
-            const textarea = document.createElement("textarea");
-            textarea.className = "item-card-impression-input";
-            textarea.rows = 3;
-            textarea.placeholder = "Write your impression of this article...";
-            textarea.value = savedText;
-            textarea.hidden = true;
-            textarea.disabled = true;
-
-            const editBtn = document.createElement("button");
-            editBtn.className = "item-card-impression-btn";
-            editBtn.textContent = "Edit";
-
-            const saveBtn = document.createElement("button");
-            saveBtn.className = "item-card-impression-btn is-save";
-            saveBtn.textContent = "Save";
-            saveBtn.hidden = true;
-
-            const cancelBtn = document.createElement("button");
-            cancelBtn.className = "item-card-impression-btn is-cancel";
-            cancelBtn.textContent = "Cancel";
-            cancelBtn.hidden = true;
-
-            editBtn.addEventListener("click", () => {
-                display.hidden = true;
-                editBtn.hidden = true;
-                textarea.hidden = false;
-                textarea.disabled = false;
-                saveBtn.hidden = false;
-                cancelBtn.hidden = false;
-                textarea.focus();
-            });
-
-            cancelBtn.addEventListener("click", () => {
-                textarea.value = display.textContent === "No impression written yet." ? "" : display.textContent;
-                textarea.hidden = true;
-                textarea.disabled = true;
-                saveBtn.hidden = true;
-                cancelBtn.hidden = true;
-                display.hidden = false;
-                editBtn.hidden = false;
-            });
-
-            saveBtn.addEventListener("click", async () => {
-                const text = textarea.value.trim();
-                saveBtn.textContent = "Saving…";
-                saveBtn.disabled = true;
-                try {
-                    await saveImpression(article.href, text);
-                    display.textContent = text || "No impression written yet.";
-                    display.classList.toggle("is-empty", !text);
-                } catch {
-                    display.textContent = "Save failed — server may not be running.";
-                    display.classList.add("is-empty");
-                }
-                textarea.hidden = true;
-                textarea.disabled = true;
-                saveBtn.hidden = true;
-                saveBtn.textContent = "Save";
-                saveBtn.disabled = false;
-                cancelBtn.hidden = true;
-                display.hidden = false;
-                editBtn.hidden = false;
-            });
 
             const btnRow = document.createElement("div");
             btnRow.className = "item-card-impression-btns";
-            btnRow.appendChild(editBtn);
-            btnRow.appendChild(saveBtn);
-            btnRow.appendChild(cancelBtn);
+
+            const buttons = [];
+
+            function renderSummary() {
+                if (!selectedReaction) {
+                    display.textContent = "Choose one impression for this article on this browser.";
+                    display.classList.add("is-empty");
+                    return;
+                }
+
+                const selectedOption = REACTION_OPTIONS.find((option) => option.key === selectedReaction);
+                display.textContent = `Your impression: ${selectedOption?.emoji || ""} ${selectedOption?.label || ""}`.trim();
+                display.classList.remove("is-empty");
+            }
+
+            function syncButtons() {
+                buttons.forEach(({ button, option, count }) => {
+                    const isSelected = selectedReaction === option.key;
+                    button.disabled = false;
+                    button.classList.toggle("is-selected", isSelected);
+                    count.textContent = isSelected ? "1" : "0";
+                });
+            }
+
+            REACTION_OPTIONS.forEach((option) => {
+                const button = document.createElement("button");
+                button.className = "item-card-impression-reaction";
+                button.type = "button";
+                button.setAttribute("aria-label", `${option.label} reaction`);
+
+                const emoji = document.createElement("span");
+                emoji.className = "item-card-impression-reaction-emoji";
+                emoji.textContent = option.emoji;
+
+                const label = document.createElement("span");
+                label.className = "item-card-impression-reaction-label";
+                label.textContent = option.label;
+
+                const count = document.createElement("span");
+                count.className = "item-card-impression-reaction-count";
+                count.textContent = selectedReaction === option.key ? "1" : "0";
+
+                button.appendChild(emoji);
+                button.appendChild(label);
+                button.appendChild(count);
+
+                button.addEventListener("click", async () => {
+                    if (selectedReaction === option.key) {
+                        return;
+                    }
+
+                    button.disabled = true;
+
+                    try {
+                        await saveImpression(article.href, option.key);
+                        selectedReaction = option.key;
+                        syncButtons();
+                        renderSummary();
+                    } catch {
+                        display.textContent = "Could not save reaction right now.";
+                        display.classList.add("is-empty");
+                    } finally {
+                        button.disabled = false;
+                    }
+                });
+
+                buttons.push({ button, option, count });
+                btnRow.appendChild(button);
+            });
+
+            syncButtons();
+            renderSummary();
 
             impressionBlock.appendChild(impressionLabel);
             impressionBlock.appendChild(display);
-            impressionBlock.appendChild(textarea);
             impressionBlock.appendChild(btnRow);
 
             card.appendChild(impressionBlock);
