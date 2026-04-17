@@ -191,6 +191,22 @@ TODO:
   - Impressions saved with the data.
 - About [x]
 
+***
+
+### Day 04 | 4/15/2026 - Wednesday
+
+Want to keep adding polish to this site. Look at design articles.
+
+Daily Checklist:
+- Article (1 to 3)
+- Blog (1)
+- Cat Facts rotation
+- Gallery/Adoption update
+- Shop links
+
+Work on determining how I want to set the base site. Look into MySQL for a database to connect up that I can store data for impressions, articles, blogs, links, events, or facts.
+
+
 
 ***
 

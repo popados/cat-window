@@ -82,10 +82,15 @@ body {
   display: grid;
   gap: 0.9rem;
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  grid-auto-rows: 200px;
+  max-height: calc(3 * 200px + 2 * 0.9rem);
+  overflow-y: auto;
 }
 
 .gallery-grid img {
   width: 100%;
+  height: 100%;
+  object-fit: cover;
   border: 3px solid var(--line);
   box-shadow: 5px 5px 0 var(--panel-alt);
 }
